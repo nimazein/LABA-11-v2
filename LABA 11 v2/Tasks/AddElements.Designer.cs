@@ -241,6 +241,7 @@
             this.BTBirdCreate.TabIndex = 4;
             this.BTBirdCreate.Text = "Cоздать";
             this.BTBirdCreate.UseVisualStyleBackColor = true;
+            this.BTBirdCreate.Click += new System.EventHandler(this.BTBirdCreate_Click);
             // 
             // label12
             // 
@@ -382,6 +383,7 @@
             this.BTArtiodactylCreate.TabIndex = 4;
             this.BTArtiodactylCreate.Text = "Cоздать";
             this.BTArtiodactylCreate.UseVisualStyleBackColor = true;
+            this.BTArtiodactylCreate.Click += new System.EventHandler(this.BTArtiodactylCreate_Click);
             // 
             // label7
             // 
@@ -453,6 +455,7 @@
             this.BTAnimalCreate.TabIndex = 4;
             this.BTAnimalCreate.Text = "Cоздать";
             this.BTAnimalCreate.UseVisualStyleBackColor = true;
+            this.BTAnimalCreate.Click += new System.EventHandler(this.BTAnimalCreate_Click);
             // 
             // label2
             // 

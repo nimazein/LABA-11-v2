@@ -24,6 +24,7 @@ namespace Tasks
         public static Collection collection;
         private void BTAddElements_Click(object sender, EventArgs e)
         {
+            EnableButtons();
             AddElements form = new AddElements();
             form.ShowDialog();
         }
@@ -43,6 +44,7 @@ namespace Tasks
         private void BTCreate_Click(object sender, EventArgs e)
         {
             collection = new Collection();
+            BTAddElements.Enabled = true;
         }
 
         private void BTFindElementByKey_Click(object sender, EventArgs e)
@@ -67,11 +69,40 @@ namespace Tasks
         private void BTClone_Click(object sender, EventArgs e)
         {
             Collection newCollection = new Collection();
-            foreach (object animal in collection.animals)
+            
+            for (int i = 0; i < collection.animals.Count; i++)
             {
-                newCollection.animals.Add(collection.animals.GetKey(collection.animals.IndexOfValue(animal)), animal);
+                object key = collection.animals.GetKey(i);
+                object value = collection.animals.GetByIndex(i);
+
+                newCollection.animals.Add(key, value);
             }
             
+        }
+
+        private void GroupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+            BTAddElements.Enabled = false;
+            BTClone.Enabled = false;
+            BTDeleteElements.Enabled = false;
+            BTFindElementByKey.Enabled = false;
+            BTNumOfElementsWithThisType.Enabled = false;
+            BTPrintEach.Enabled = false;
+            BTPrintElementsWithThisType.Enabled = false;
+        }
+        private void EnableButtons()
+        {           
+            BTClone.Enabled = true;
+            BTDeleteElements.Enabled = true;
+            BTFindElementByKey.Enabled = true;
+            BTNumOfElementsWithThisType.Enabled = true;
+            BTPrintEach.Enabled = true;
+            BTPrintElementsWithThisType.Enabled = true;
         }
     }
 }

@@ -33,9 +33,10 @@
             // 
             // TBOutput
             // 
-            this.TBOutput.Location = new System.Drawing.Point(36, 35);
+            this.TBOutput.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F);
+            this.TBOutput.Location = new System.Drawing.Point(12, 12);
             this.TBOutput.Name = "TBOutput";
-            this.TBOutput.Size = new System.Drawing.Size(446, 403);
+            this.TBOutput.Size = new System.Drawing.Size(543, 618);
             this.TBOutput.TabIndex = 0;
             this.TBOutput.Text = "";
             // 
@@ -43,7 +44,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(567, 642);
             this.Controls.Add(this.TBOutput);
             this.Name = "PrintEach";
             this.Text = "PrintEach";

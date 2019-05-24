@@ -38,14 +38,16 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.BTCreate = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // BTAddElements
             // 
             this.BTAddElements.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTAddElements.Location = new System.Drawing.Point(27, 30);
+            this.BTAddElements.Location = new System.Drawing.Point(6, 33);
             this.BTAddElements.Name = "BTAddElements";
             this.BTAddElements.Size = new System.Drawing.Size(105, 52);
             this.BTAddElements.TabIndex = 0;
@@ -82,7 +84,7 @@
             this.BTClone.Name = "BTClone";
             this.BTClone.Size = new System.Drawing.Size(152, 49);
             this.BTClone.TabIndex = 3;
-            this.BTClone.Text = "Клонировать коллекцию";
+            this.BTClone.Text = "Клонирование коллекции";
             this.BTClone.UseVisualStyleBackColor = true;
             this.BTClone.Click += new System.EventHandler(this.BTClone_Click);
             // 
@@ -111,7 +113,7 @@
             // BTDeleteElements
             // 
             this.BTDeleteElements.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTDeleteElements.Location = new System.Drawing.Point(27, 88);
+            this.BTDeleteElements.Location = new System.Drawing.Point(6, 91);
             this.BTDeleteElements.Name = "BTDeleteElements";
             this.BTDeleteElements.Size = new System.Drawing.Size(105, 53);
             this.BTDeleteElements.TabIndex = 6;
@@ -124,7 +126,7 @@
             this.groupBox1.Controls.Add(this.BTNumOfElementsWithThisType);
             this.groupBox1.Controls.Add(this.BTPrintElementsWithThisType);
             this.groupBox1.Controls.Add(this.BTFindElementByKey);
-            this.groupBox1.Location = new System.Drawing.Point(191, 12);
+            this.groupBox1.Location = new System.Drawing.Point(192, 13);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 260);
             this.groupBox1.TabIndex = 7;
@@ -135,17 +137,17 @@
             // 
             this.groupBox2.Controls.Add(this.BTPrintEach);
             this.groupBox2.Controls.Add(this.BTClone);
-            this.groupBox2.Location = new System.Drawing.Point(416, 13);
+            this.groupBox2.Location = new System.Drawing.Point(414, 14);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(226, 259);
+            this.groupBox2.Size = new System.Drawing.Size(190, 259);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
+            this.groupBox2.Text = "Действия со всей коллекцией";
             // 
             // BTCreate
             // 
             this.BTCreate.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F);
-            this.BTCreate.Location = new System.Drawing.Point(27, 298);
+            this.BTCreate.Location = new System.Drawing.Point(12, 31);
             this.BTCreate.Name = "BTCreate";
             this.BTCreate.Size = new System.Drawing.Size(130, 55);
             this.BTCreate.TabIndex = 9;
@@ -153,20 +155,33 @@
             this.BTCreate.UseVisualStyleBackColor = true;
             this.BTCreate.Click += new System.EventHandler(this.BTCreate_Click);
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.BTDeleteElements);
+            this.groupBox3.Controls.Add(this.BTAddElements);
+            this.groupBox3.Location = new System.Drawing.Point(12, 109);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(122, 154);
+            this.groupBox3.TabIndex = 10;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Заполнение коллекции";
+            this.groupBox3.Enter += new System.EventHandler(this.GroupBox3_Enter);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(792, 507);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.BTCreate);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.BTDeleteElements);
-            this.Controls.Add(this.BTAddElements);
             this.Name = "Main";
             this.Text = "Main";
+            this.Load += new System.EventHandler(this.Main_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -183,6 +198,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button BTCreate;
+        private System.Windows.Forms.GroupBox groupBox3;
     }
 }
 

@@ -35,32 +35,36 @@
             // 
             // BTPrint
             // 
-            this.BTPrint.Location = new System.Drawing.Point(59, 85);
+            this.BTPrint.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F);
+            this.BTPrint.Location = new System.Drawing.Point(35, 70);
             this.BTPrint.Name = "BTPrint";
-            this.BTPrint.Size = new System.Drawing.Size(75, 23);
+            this.BTPrint.Size = new System.Drawing.Size(123, 37);
             this.BTPrint.TabIndex = 0;
-            this.BTPrint.Text = "button1";
+            this.BTPrint.Text = "Вывести";
             this.BTPrint.UseVisualStyleBackColor = true;
             this.BTPrint.Click += new System.EventHandler(this.BTPrint_Click);
             // 
             // CBTypes
             // 
+            this.CBTypes.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F);
             this.CBTypes.FormattingEnabled = true;
             this.CBTypes.Items.AddRange(new object[] {
             "Животные",
             "Млекопитающие",
             "Птицы",
             "Парнокопытные"});
-            this.CBTypes.Location = new System.Drawing.Point(59, 58);
+            this.CBTypes.Location = new System.Drawing.Point(35, 36);
             this.CBTypes.Name = "CBTypes";
-            this.CBTypes.Size = new System.Drawing.Size(134, 21);
+            this.CBTypes.Size = new System.Drawing.Size(134, 28);
             this.CBTypes.TabIndex = 2;
             // 
             // TBOutput
             // 
-            this.TBOutput.Location = new System.Drawing.Point(89, 134);
+            this.TBOutput.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F);
+            this.TBOutput.Location = new System.Drawing.Point(35, 126);
             this.TBOutput.Name = "TBOutput";
-            this.TBOutput.Size = new System.Drawing.Size(259, 286);
+            this.TBOutput.ReadOnly = true;
+            this.TBOutput.Size = new System.Drawing.Size(260, 312);
             this.TBOutput.TabIndex = 3;
             this.TBOutput.Text = "";
             // 
@@ -68,7 +72,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(339, 450);
             this.Controls.Add(this.TBOutput);
             this.Controls.Add(this.CBTypes);
             this.Controls.Add(this.BTPrint);

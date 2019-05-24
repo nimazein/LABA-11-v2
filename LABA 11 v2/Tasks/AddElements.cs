@@ -66,7 +66,7 @@ namespace Tasks
         private void BTBirdCreate_Click(object sender, EventArgs e)
         {
             if (!support.IsStringEmpty(TBBirdName.Text)
-                && !support.IsStringEmpty(TBBirdWeight.Text))
+               && !support.IsStringEmpty(TBBirdWeight.Text))
             {
                 string name = TBBirdName.Text;
                 int weight = Convert.ToInt32(TBBirdWeight.Text);
@@ -82,6 +82,7 @@ namespace Tasks
 
             TBBirdWeight.Clear();
             TBBirdName.Clear();
+           
         }
 
         private void BTArtiodactylCreate_Click(object sender, EventArgs e)
@@ -112,5 +113,6 @@ namespace Tasks
             TBArtiodactylName.Clear();
             TBArtiodactylWeight.Clear();
         }
+    
     }
 }
