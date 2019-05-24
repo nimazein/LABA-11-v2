@@ -85,6 +85,12 @@
       <DependentUpon>NumberOfElementsWithThisType.cs</DependentUpon>
     </Compile>
     <Compile Include="OrderArtiodactyl.cs" />
+    <Compile Include="PrintEach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintEach.Designer.cs">
+      <DependentUpon>PrintEach.cs</DependentUpon>
+    </Compile>
     <Compile Include="PrintElementsWithThisType.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +114,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NumberOfElementsWithThisType.resx">
       <DependentUpon>NumberOfElementsWithThisType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintEach.resx">
+      <DependentUpon>PrintEach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PrintElementsWithThisType.resx">
       <DependentUpon>PrintElementsWithThisType.cs</DependentUpon>

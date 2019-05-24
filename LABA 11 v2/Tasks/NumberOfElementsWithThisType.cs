@@ -21,7 +21,7 @@ namespace Tasks
         private void BTShow_Click(object sender, EventArgs e)
         {
             TBOutput.Clear();
-            int output;
+            int output = -1;
             switch (CBTypes.SelectedIndex)
             {
                 case 0:

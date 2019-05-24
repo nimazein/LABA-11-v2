@@ -62,6 +62,7 @@
             this.BTPrintEach.TabIndex = 1;
             this.BTPrintEach.Text = "Перебор всех элементов коллекции";
             this.BTPrintEach.UseVisualStyleBackColor = true;
+            this.BTPrintEach.Click += new System.EventHandler(this.BTPrintEach_Click);
             // 
             // BTFindElementByKey
             // 
@@ -83,6 +84,7 @@
             this.BTClone.TabIndex = 3;
             this.BTClone.Text = "Клонировать коллекцию";
             this.BTClone.UseVisualStyleBackColor = true;
+            this.BTClone.Click += new System.EventHandler(this.BTClone_Click);
             // 
             // BTPrintElementsWithThisType
             // 

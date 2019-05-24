@@ -42,50 +42,41 @@ namespace Tasks
         }
 
 
-
-
-
+        private PrintEach printEach;
+        public PrintEach PrintEach
+        {
+            get
+            {
+                return printEach;
+            }
+            set
+            {
+                printEach = value;
+            }
+        }
 
         public void PrintElement(object individual)
         {
-
-        }
-
-       
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        public void PrintElement(object individual, Form form)
-        {
+            string output = "";
             switch (support.IdentifyType(individual))
             {
                 case "animal":
-                    form.Print(individual as KingdomAnimal);
+                    output = (individual as KingdomAnimal).ToString();
                     break;
 
                 case "bird":
-                    form.Print(individual as ClassBirds);
+                    output = (individual as ClassBirds).ToString();
                     break;
 
                 case "mammal":
-                    form.Print(individual as ClassMammals);
+                    output = (individual as ClassMammals).ToString();
                     break;
 
                 case "artyodactyl":
-                    form.Print(individual as OrderArtiodactyl);
+                    output = (individual as OrderArtiodactyl).ToString();
                     break;
             }
+            printEach.PrintString(output);
         }
     }
 }

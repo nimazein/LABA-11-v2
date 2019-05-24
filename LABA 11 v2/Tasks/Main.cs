@@ -54,7 +54,24 @@ namespace Tasks
 
         private void BTPrintElementsWithThisType_Click(object sender, EventArgs e)
         {
+            PrintElementsWithThisType form = new PrintElementsWithThisType();
+            form.ShowDialog();
+        }
 
+        private void BTPrintEach_Click(object sender, EventArgs e)
+        {
+            PrintEach form = new PrintEach();
+            form.ShowDialog();
+        }
+
+        private void BTClone_Click(object sender, EventArgs e)
+        {
+            Collection newCollection = new Collection();
+            foreach (object animal in collection.animals)
+            {
+                newCollection.animals.Add(collection.animals.GetKey(collection.animals.IndexOfValue(animal)), animal);
+            }
+            
         }
     }
 }
