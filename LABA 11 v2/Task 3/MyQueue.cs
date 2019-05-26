@@ -1,17 +1,14 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Task_3
 {
-    class MyQueue<T> : IEnumerator<T>, IEnumerable<T>
+    public class MyQueue<T> : IEnumerator<T>, IEnumerable<T>
     {
         // Fields and Consts
 
-        private List<T> queue;
+        public List<T> queue;
         private int capacity;
         private int count;
         private const int DEFAULT_CAPACITY = 32;
@@ -25,19 +22,28 @@ namespace Task_3
         }
         public int Count
         {
-            get;
-            set;
+            get
+            {
+                return count;
+            }
+            set
+            {
+                count = value;
+            }
+
         }
 
         // Ctors
 
         public MyQueue()
         {
-            queue = new List<T>(DEFAULT_CAPACITY);               
+            queue = new List<T>(DEFAULT_CAPACITY);
+            capacity = DEFAULT_CAPACITY;
         }
         public MyQueue(int capacity)
         {
             queue = new List<T>(capacity);
+            this.capacity = capacity;
         }
         public MyQueue(MyQueue<T> collection) //?
         {
@@ -49,7 +55,7 @@ namespace Task_3
 
         // Methods
 
-        public bool Contains (T item)
+        public bool Contains(T item)
         {
             if (queue.Contains(item))
             {
@@ -71,6 +77,7 @@ namespace Task_3
         {
             T buf = queue[0];
             queue.RemoveAt(0);
+            count--;
             return buf;
         }
 
@@ -78,6 +85,7 @@ namespace Task_3
         {
             T i = (T)item;
             queue.Add(i);
+            count++;
         }
 
         public T Peek()
