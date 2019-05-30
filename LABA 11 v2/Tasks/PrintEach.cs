@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Tasks
@@ -19,14 +12,23 @@ namespace Tasks
         Collection collection = Main.collection;
         private void PrintEach_Load(object sender, EventArgs e)
         {
-            FormPrinter printer = new FormPrinter();
-            printer.PrintEach = this;
 
-            collection.PrintEach(printer);            
         }
         public void PrintString(string line)
         {
-            TBOutput.Text += line + "\n";
+            TBOutput.Text += line;
+        }
+
+        private void TBOutput_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void BTOutput_Click(object sender, EventArgs e)
+        {
+            FormPrinter printer = new FormPrinter();
+            printer.PrintEach = this;
+
+            collection.PrintEach(printer);
         }
     }
 }

@@ -40,7 +40,7 @@ namespace Tasks
         }
         public override string ToString()
         {
-            return $"{Name}, {Weight}кг\n";
+            return $"{Name}, {Weight} кг\n";
         }
     }
 }

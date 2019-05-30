@@ -32,9 +32,9 @@ namespace Task_3
             InputCapacity form = new InputCapacity();
             form.ShowDialog();
 
-            animals = new MyQueue<IAnimal>(capacity:InputCapacity.capacity);
+            animals = new MyQueue<IAnimal>(InputCapacity.capacity);
 
-            BTFill.Enabled = false;
+            BTFill.Enabled = true;
         }
 
         private void BTCtorCollection_Click(object sender, EventArgs e)
@@ -48,6 +48,16 @@ namespace Task_3
 
             animals = new MyQueue<IAnimal>(zoo);
 
+            BTClear.Enabled = true;
+            BTClone.Enabled = true;
+            BTContains.Enabled = true;
+            BTCopyTo.Enabled = true;
+            BTCount.Enabled = true;
+            BTDequeue.Enabled = true;
+            BTEnqueue.Enabled = true;
+            BTPeek.Enabled = true;
+            BTToArray.Enabled = true;
+            BTCapacity.Enabled = true;
         }
 
         private void Main_Load(object sender, EventArgs e)
@@ -64,5 +74,83 @@ namespace Task_3
             BTToArray.Enabled = false;
             BTCapacity.Enabled = false;
         }
+
+        private void BTFill_Click(object sender, EventArgs e)
+        {
+            FillCollection form = new FillCollection();
+            form.ShowDialog();
+
+            BTClear.Enabled = true;
+            BTClone.Enabled = true;
+            BTContains.Enabled = true;
+            BTCopyTo.Enabled = true;
+            BTCount.Enabled = true;
+            BTDequeue.Enabled = true;
+            BTEnqueue.Enabled = true;
+            BTPeek.Enabled = true;
+            BTToArray.Enabled = true;
+            BTCapacity.Enabled = true;
+        }
+
+        private void BTCount_Click(object sender, EventArgs e)
+        {
+            string content = $"Объектов в коллекции: {Main.animals.Count}";
+            support.ShowInfo(content);
+        }
+
+        private void BTCapacity_Click(object sender, EventArgs e)
+        {
+            string content = $"Вместимость коллекции: {Main.animals.Capacity}";
+            support.ShowInfo(content);
+        }
+
+        private void BTContains_Click(object sender, EventArgs e)
+        {
+            ContainObj form = new ContainObj();
+            form.ShowDialog();
+        }
+
+        private void BTClear_Click(object sender, EventArgs e)
+        {
+            Main.animals.Clear();
+            support.ShowInfo("Коллекция очищена");
+        }
+
+        private void BTEnqueue_Click(object sender, EventArgs e)
+        {
+            AddElement form = new AddElement();
+            form.ShowDialog();
+        }
+
+        private void BTPeek_Click(object sender, EventArgs e)
+        {
+            support.ShowInfo(Main.animals.Peek().ToString());
+        }
+
+        private void BTDequeue_Click(object sender, EventArgs e)
+        {
+            support.ShowInfo(Main.animals.Dequeue().ToString());         
+        }
+
+        private void BTToArray_Click(object sender, EventArgs e)
+        {
+            Array array = Main.animals.ToArray();
+            support.ShowInfo("Коллекция преобразована в массив");
+        }
+
+        private void BTClone_Click(object sender, EventArgs e)
+        {
+            List<IAnimal> newZoo = Main.animals.Clone();
+            support.ShowInfo("Колекция клонирована");
+        }
+
+        private void BTCopyTo_Click(object sender, EventArgs e)
+        {
+            IAnimal[] array = new IAnimal[animals.Count];
+            animals.CopyTo(array, 0);
+            support.ShowInfo("Колекция скопирована в массив");
+        }
     }
+
+
 }

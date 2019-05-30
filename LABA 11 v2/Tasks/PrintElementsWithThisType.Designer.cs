@@ -64,7 +64,7 @@
             this.TBOutput.Location = new System.Drawing.Point(35, 126);
             this.TBOutput.Name = "TBOutput";
             this.TBOutput.ReadOnly = true;
-            this.TBOutput.Size = new System.Drawing.Size(260, 312);
+            this.TBOutput.Size = new System.Drawing.Size(844, 312);
             this.TBOutput.TabIndex = 3;
             this.TBOutput.Text = "";
             // 
@@ -72,7 +72,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(339, 450);
+            this.ClientSize = new System.Drawing.Size(891, 450);
             this.Controls.Add(this.TBOutput);
             this.Controls.Add(this.CBTypes);
             this.Controls.Add(this.BTPrint);

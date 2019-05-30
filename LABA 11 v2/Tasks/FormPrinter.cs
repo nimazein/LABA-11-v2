@@ -64,11 +64,11 @@ namespace Tasks
                     output = (individual as KingdomAnimal).ToString();
                     break;
 
-                case "bird":
+                case "birds":
                     output = (individual as ClassBirds).ToString();
                     break;
 
-                case "mammal":
+                case "mammals":
                     output = (individual as ClassMammals).ToString();
                     break;
 

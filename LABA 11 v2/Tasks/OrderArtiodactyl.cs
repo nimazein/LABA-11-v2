@@ -42,7 +42,7 @@ namespace Tasks
 
         public override string ToString()
         {
-            return $"{Name}, {Weight}кг, {IncubationPeriod}месяцев, {LifeExpectancy}лет, есть рога: {HasHorns}, {Habitat}\n";
+            return $"{Name}, {Weight} кг, {IncubationPeriod} месяцев, {LifeExpectancy} лет, есть рога: {HasHorns}, {Habitat}\n";
         }
 
     }

@@ -12,23 +12,26 @@ namespace Task_3
         private int capacity;
         private int count;
         private const int DEFAULT_CAPACITY = 32;
+        private const int EXPAND_RATE = 2;
 
         // Properties
 
         public int Capacity
         {
-            get;
-            set;
+            get
+            {
+                return capacity;
+            }
+            set
+            {
+                capacity = value;
+            }
         }
         public int Count
         {
             get
             {
-                return count;
-            }
-            set
-            {
-                count = value;
+                return queue.Count;
             }
 
         }
@@ -45,19 +48,23 @@ namespace Task_3
             queue = new List<T>(capacity);
             this.capacity = capacity;
         }
-        public MyQueue(MyQueue<T> collection) //?
+        public MyQueue(MyQueue<T> collection)
+            :this()
         {
-            IEnumerator<T> ienum = queue.GetEnumerator();
+            if (collection is null)
+                throw new ArgumentException("collection");
 
-            while (ienum.MoveNext())
-                queue.Add(ienum.Current);
+            foreach(var element in collection)
+            {
+                queue.Add(element);
+            }
         }
 
         // Methods
 
-        public bool Contains(T item)
+        public bool Contains(object item)
         {
-            if (queue.Contains(item))
+            if (queue.Contains((T)item))
             {
                 return true;
             }
@@ -70,7 +77,6 @@ namespace Task_3
         public void Clear()
         {
             queue.Clear();
-            Count = 0;
         }
 
         public T Dequeue()
@@ -104,7 +110,7 @@ namespace Task_3
             return queue;
         }
 
-        public void CopyTo(Array array, int arrayIdx)
+        public void CopyTo(T[] array, int arrayIdx)
         {
             if (array.Length - arrayIdx < Count)
             {
@@ -112,9 +118,13 @@ namespace Task_3
             }
             else
             {
-                T[] Tarr = (T[])array;
-                queue.CopyTo(Tarr, arrayIdx);
+                queue.CopyTo(array, arrayIdx);
             }
+        }
+
+        public void ExpandCollection()
+        {
+            capacity = capacity * EXPAND_RATE;
         }
 
         // IEnumerator realization

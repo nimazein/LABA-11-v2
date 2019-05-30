@@ -21,6 +21,7 @@ namespace Tasks
         {
 
         }
+        Support support = new Support();
         public static Collection collection;
         private void BTAddElements_Click(object sender, EventArgs e)
         {
@@ -77,7 +78,9 @@ namespace Tasks
 
                 newCollection.animals.Add(key, value);
             }
-            
+            support.ShowInfo("Коллекция склонирована");
+
+    
         }
 
         private void GroupBox3_Enter(object sender, EventArgs e)

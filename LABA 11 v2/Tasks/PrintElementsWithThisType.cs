@@ -20,6 +20,7 @@ namespace Tasks
         Collection сollection = Main.collection;
         private void BTPrint_Click(object sender, EventArgs e)
         {
+            TBOutput.Clear();
             string type = "";
             switch (CBTypes.SelectedIndex)
             {

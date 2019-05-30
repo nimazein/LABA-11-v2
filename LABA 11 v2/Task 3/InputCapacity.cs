@@ -17,10 +17,12 @@ namespace Task_3
             InitializeComponent();
         }
         public static int capacity;
+        Support support = new Support();
         private void BTInputCapacity_Click(object sender, EventArgs e)
         {
             capacity = Convert.ToInt32(TBCapacity.Text);
-
+            BTInputCapacity.Enabled = false;
+            support.ShowInfo("Размерность задана");
         }
     }
 }

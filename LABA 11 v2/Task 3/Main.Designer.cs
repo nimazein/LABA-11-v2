@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.BTEnqueue = new System.Windows.Forms.Button();
             this.BTContains = new System.Windows.Forms.Button();
             this.BTClear = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.BTCount = new System.Windows.Forms.Button();
             this.BTCapacity = new System.Windows.Forms.Button();
+            this.BTCount = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.BTCtorCapacity = new System.Windows.Forms.Button();
-            this.BTCtorEmpty = new System.Windows.Forms.Button();
             this.BTCtorCollection = new System.Windows.Forms.Button();
-            this.BTEnqueue = new System.Windows.Forms.Button();
+            this.BTCtorEmpty = new System.Windows.Forms.Button();
+            this.BTCtorCapacity = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.BTDequeue = new System.Windows.Forms.Button();
             this.BTPeek = new System.Windows.Forms.Button();
@@ -66,6 +66,17 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Элементы";
             // 
+            // BTEnqueue
+            // 
+            this.BTEnqueue.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTEnqueue.Location = new System.Drawing.Point(19, 160);
+            this.BTEnqueue.Name = "BTEnqueue";
+            this.BTEnqueue.Size = new System.Drawing.Size(152, 68);
+            this.BTEnqueue.TabIndex = 5;
+            this.BTEnqueue.Text = "Добавить новый элемент";
+            this.BTEnqueue.UseVisualStyleBackColor = true;
+            this.BTEnqueue.Click += new System.EventHandler(this.BTEnqueue_Click);
+            // 
             // BTContains
             // 
             this.BTContains.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -75,6 +86,7 @@
             this.BTContains.TabIndex = 1;
             this.BTContains.Text = "Проверить содержание элемента";
             this.BTContains.UseVisualStyleBackColor = true;
+            this.BTContains.Click += new System.EventHandler(this.BTContains_Click);
             // 
             // BTClear
             // 
@@ -85,6 +97,7 @@
             this.BTClear.TabIndex = 3;
             this.BTClear.Text = "Очистить";
             this.BTClear.UseVisualStyleBackColor = true;
+            this.BTClear.Click += new System.EventHandler(this.BTClear_Click);
             // 
             // groupBox1
             // 
@@ -97,16 +110,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Запросы";
             // 
-            // BTCount
-            // 
-            this.BTCount.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTCount.Location = new System.Drawing.Point(20, 32);
-            this.BTCount.Name = "BTCount";
-            this.BTCount.Size = new System.Drawing.Size(152, 54);
-            this.BTCount.TabIndex = 5;
-            this.BTCount.Text = "Количество объектов";
-            this.BTCount.UseVisualStyleBackColor = true;
-            // 
             // BTCapacity
             // 
             this.BTCapacity.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -116,6 +119,18 @@
             this.BTCapacity.TabIndex = 2;
             this.BTCapacity.Text = "Вместимость коллекции";
             this.BTCapacity.UseVisualStyleBackColor = true;
+            this.BTCapacity.Click += new System.EventHandler(this.BTCapacity_Click);
+            // 
+            // BTCount
+            // 
+            this.BTCount.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTCount.Location = new System.Drawing.Point(20, 32);
+            this.BTCount.Name = "BTCount";
+            this.BTCount.Size = new System.Drawing.Size(152, 54);
+            this.BTCount.TabIndex = 5;
+            this.BTCount.Text = "Количество объектов";
+            this.BTCount.UseVisualStyleBackColor = true;
+            this.BTCount.Click += new System.EventHandler(this.BTCount_Click);
             // 
             // groupBox4
             // 
@@ -129,16 +144,16 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Создать коллекцию (тестирование конструкторов)";
             // 
-            // BTCtorCapacity
+            // BTCtorCollection
             // 
-            this.BTCtorCapacity.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTCtorCapacity.Location = new System.Drawing.Point(25, 114);
-            this.BTCtorCapacity.Name = "BTCtorCapacity";
-            this.BTCtorCapacity.Size = new System.Drawing.Size(105, 52);
-            this.BTCtorCapacity.TabIndex = 1;
-            this.BTCtorCapacity.Text = "Задать размер";
-            this.BTCtorCapacity.UseVisualStyleBackColor = true;
-            this.BTCtorCapacity.Click += new System.EventHandler(this.BTCtorCapacity_Click);
+            this.BTCtorCollection.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTCtorCollection.Location = new System.Drawing.Point(25, 172);
+            this.BTCtorCollection.Name = "BTCtorCollection";
+            this.BTCtorCollection.Size = new System.Drawing.Size(135, 69);
+            this.BTCtorCollection.TabIndex = 3;
+            this.BTCtorCollection.Text = "Скопировать существующую коллекцию";
+            this.BTCtorCollection.UseVisualStyleBackColor = true;
+            this.BTCtorCollection.Click += new System.EventHandler(this.BTCtorCollection_Click);
             // 
             // BTCtorEmpty
             // 
@@ -151,26 +166,16 @@
             this.BTCtorEmpty.UseVisualStyleBackColor = true;
             this.BTCtorEmpty.Click += new System.EventHandler(this.BTCtorEmpty_Click);
             // 
-            // BTCtorCollection
+            // BTCtorCapacity
             // 
-            this.BTCtorCollection.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTCtorCollection.Location = new System.Drawing.Point(25, 172);
-            this.BTCtorCollection.Name = "BTCtorCollection";
-            this.BTCtorCollection.Size = new System.Drawing.Size(135, 69);
-            this.BTCtorCollection.TabIndex = 3;
-            this.BTCtorCollection.Text = "Скопировать существующую коллекцию";
-            this.BTCtorCollection.UseVisualStyleBackColor = true;
-            this.BTCtorCollection.Click += new System.EventHandler(this.BTCtorCollection_Click);
-            // 
-            // BTEnqueue
-            // 
-            this.BTEnqueue.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTEnqueue.Location = new System.Drawing.Point(19, 160);
-            this.BTEnqueue.Name = "BTEnqueue";
-            this.BTEnqueue.Size = new System.Drawing.Size(152, 68);
-            this.BTEnqueue.TabIndex = 5;
-            this.BTEnqueue.Text = "Добавить новый элемент";
-            this.BTEnqueue.UseVisualStyleBackColor = true;
+            this.BTCtorCapacity.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTCtorCapacity.Location = new System.Drawing.Point(25, 114);
+            this.BTCtorCapacity.Name = "BTCtorCapacity";
+            this.BTCtorCapacity.Size = new System.Drawing.Size(105, 52);
+            this.BTCtorCapacity.TabIndex = 1;
+            this.BTCtorCapacity.Text = "Задать размер";
+            this.BTCtorCapacity.UseVisualStyleBackColor = true;
+            this.BTCtorCapacity.Click += new System.EventHandler(this.BTCtorCapacity_Click);
             // 
             // groupBox5
             // 
@@ -192,6 +197,7 @@
             this.BTDequeue.TabIndex = 2;
             this.BTDequeue.Text = "Показать и удалить";
             this.BTDequeue.UseVisualStyleBackColor = true;
+            this.BTDequeue.Click += new System.EventHandler(this.BTDequeue_Click);
             // 
             // BTPeek
             // 
@@ -202,6 +208,7 @@
             this.BTPeek.TabIndex = 5;
             this.BTPeek.Text = "Показать";
             this.BTPeek.UseVisualStyleBackColor = true;
+            this.BTPeek.Click += new System.EventHandler(this.BTPeek_Click);
             // 
             // groupBox3
             // 
@@ -224,6 +231,7 @@
             this.BTCopyTo.TabIndex = 5;
             this.BTCopyTo.Text = "Скопировать в массив\r\n";
             this.BTCopyTo.UseVisualStyleBackColor = true;
+            this.BTCopyTo.Click += new System.EventHandler(this.BTCopyTo_Click);
             // 
             // BTToArray
             // 
@@ -234,6 +242,7 @@
             this.BTToArray.TabIndex = 1;
             this.BTToArray.Text = "Преобразовать в массив";
             this.BTToArray.UseVisualStyleBackColor = true;
+            this.BTToArray.Click += new System.EventHandler(this.BTToArray_Click);
             // 
             // BTClone
             // 
@@ -244,6 +253,7 @@
             this.BTClone.TabIndex = 3;
             this.BTClone.Text = "Поверхностно скопировать";
             this.BTClone.UseVisualStyleBackColor = true;
+            this.BTClone.Click += new System.EventHandler(this.BTClone_Click);
             // 
             // BTFill
             // 
@@ -254,6 +264,7 @@
             this.BTFill.TabIndex = 18;
             this.BTFill.Text = "Заполнить коллекцию";
             this.BTFill.UseVisualStyleBackColor = true;
+            this.BTFill.Click += new System.EventHandler(this.BTFill_Click);
             // 
             // Main
             // 

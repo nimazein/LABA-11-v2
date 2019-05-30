@@ -80,13 +80,13 @@
             this.groupBox1.Size = new System.Drawing.Size(254, 208);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Text = "Выбор типа";
             // 
             // NumberOfElementsWithThisType
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(312, 298);
+            this.ClientSize = new System.Drawing.Size(292, 239);
             this.Controls.Add(this.groupBox1);
             this.Name = "NumberOfElementsWithThisType";
             this.Text = "NumberOfElementsWithThisType";

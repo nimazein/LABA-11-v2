@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Task_3
+namespace Task_2
 {
-    class Demonstrator
+    class MySortedDictionary
     {
 
     }

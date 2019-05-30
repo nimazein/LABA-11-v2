@@ -107,36 +107,39 @@ namespace Tasks
             {
                 if (animals.GetByIndex(i) is KingdomAnimal)
                 {
+                    if (animals.GetByIndex(i) is ClassMammals)
+                    {
+                        if (animals.GetByIndex(i) is OrderArtiodactyl)
+                        {
+                            if (type == "Парнокопытные")
+                            {
+                                printer.PrintThisType(animals.GetByIndex(i) as OrderArtiodactyl);
+                                continue;
+                            }
+                        }
+                        if (type == "Млекопитающие")
+                        {
+                            printer.PrintThisType(animals.GetByIndex(i) as ClassMammals);
+                            continue;
+                        }                
+                    }
+                    if (animals.GetByIndex(i) is ClassBirds)
+                    {
+                        if (type == "Птицы")
+                        {
+                            printer.PrintThisType(animals.GetByIndex(i) as ClassBirds);
+                            continue;
+                        }
+                    }
                     if (type == "Животные")
                     {
                         printer.PrintThisType(animals.GetByIndex(i) as KingdomAnimal);
                         continue;
-                    }
+                    }                    
+                    
                 }
-                if (animals.GetByIndex(i) is ClassMammals)
-                {
-                    if (type == "Млекопитающие")
-                    {
-                        printer.PrintThisType(animals.GetByIndex(i) as ClassMammals);
-                        continue;
-                    }
-                }
-                if (animals.GetByIndex(i) is ClassBirds)
-                {
-                    if (type == "Птицы")
-                    {
-                        printer.PrintThisType(animals.GetByIndex(i) as ClassBirds);
-                        continue;
-                    }
-                }
-                if (animals.GetByIndex(i) is OrderArtiodactyl)
-                {
-                    if (type == "Парнокопытные")
-                    {
-                        printer.PrintThisType(animals.GetByIndex(i) as OrderArtiodactyl);
-                        continue;
-                    }
-                }
+                
+                
             }           
         }
         public void PrintEach(IPrinter printer)

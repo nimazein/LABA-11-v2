@@ -38,5 +38,10 @@ namespace Tasks
             }
             return type;
         }
+        public void ShowInfo(string content)
+        {
+            string header = "Успех";
+            MessageBox.Show(content, header, MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }
